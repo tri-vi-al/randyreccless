@@ -23,8 +23,8 @@ jobs:
 
     - name: Create .env file
       env:
-        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-      run: echo "DISCORD_TOKEN=$DISCORD_TOKEN" > .env
+        DISCORD_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+      run: echo "DISCORD_BOT_TOKEN=$DISCORD_TOKEN" > .env
 
     - name: Run bot
       run: node index.js

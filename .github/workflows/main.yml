@@ -21,9 +21,10 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run bot
+    - name: Create .env file
       env:
         DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-      run: |
-        echo "DISCORD_TOKEN=$DISCORD_TOKEN" > .env
-        node index.js
+      run: echo "DISCORD_TOKEN=$DISCORD_TOKEN" > .env
+
+    - name: Run bot
+      run: node index.js
